@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @RestController
-@RequestMapping("/pago")
+@RequestMapping("/pagos")
 @RequiredArgsConstructor
 public class PagoController {
 
@@ -32,12 +32,12 @@ public class PagoController {
 
     }
 
-    @GetMapping("/users")
+    @GetMapping("/list")
     public List<Pago> getAllUsers(){
         return pagoService.getAllPagos();
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/pago/{id}")
     public Optional<Pago> getPagoById(@PathVariable Integer id){
         return pagoService.getPagoById(id);
     }
