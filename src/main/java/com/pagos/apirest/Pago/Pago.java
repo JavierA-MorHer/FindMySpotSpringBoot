@@ -22,7 +22,8 @@ public class Pago {
     @Basic
     private Integer id_Usuario;
     private Integer id_Entrada;
-    private Integer Total;
+    private String  fechaPago;
+    private String Total;
     
 }
 
