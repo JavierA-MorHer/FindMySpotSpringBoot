@@ -1,5 +1,6 @@
 package com.pagos.apirest.Pago;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,10 @@ public class PagoService {
 
     public Optional<Pago> getPagoById(Integer id){
         return pagoRepository.findById(id);
+    }
+
+    public  ArrayList<?> getPagosByEntradaId(Integer id_Entrada) {
+        return pagoRepository.findByIdEntrada(id_Entrada);
     }
 
     public void editarPago(Integer id, Pago nuevoPago){

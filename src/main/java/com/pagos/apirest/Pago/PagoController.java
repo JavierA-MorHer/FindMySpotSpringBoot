@@ -1,5 +1,7 @@
 package com.pagos.apirest.Pago;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,6 +48,15 @@ public class PagoController {
     @GetMapping("/pago/{id}")
     public Optional<Pago> getPagoById(@PathVariable Integer id){
         return pagoService.getPagoById(id);
+    }
+
+     @GetMapping("/status/{id}")
+    public Boolean getPagosByEntradaId(@PathVariable Integer id){
+            if (pagoService.getPagosByEntradaId(id).isEmpty()) {
+                return false;
+            }else{
+                return true;
+            }
     }
 
     @PutMapping("/modify/{id}")

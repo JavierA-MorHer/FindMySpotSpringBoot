@@ -3,6 +3,7 @@ package com.pagos.apirest.Pago;
 import java.sql.Date;
 
 import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -21,6 +22,7 @@ public class Pago {
     private Integer id_Pago;
     @Basic
     private Integer id_Usuario;
+    @Column(name = "id_Entrada")
     private Integer id_Entrada;
     private String  fechaPago;
     private String Total;
