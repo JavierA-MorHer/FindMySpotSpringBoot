@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,11 +26,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PagoController {
 
     private final PagoService pagoService;
+    
 
     @PostMapping("/create")
-    public void createPago(@RequestBody Pago pago)
+    public ResponseEntity<Pago> createPago(@RequestBody Pago pago)
     {
-        pagoService.createPago(pago);
+        Pago nuevoPago = pagoService.createPago(pago);
+
+         // Puedes ajustar el código de respuesta según tus necesidades
+        return new ResponseEntity<>(nuevoPago, HttpStatus.CREATED);
 
     }
 

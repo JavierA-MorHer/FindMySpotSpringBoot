@@ -13,9 +13,11 @@ public class PagoService {
 
     private final PagoRepository pagoRepository;
 
-    public void createPago(Pago pago)
+    public Pago createPago(Pago pago)
     {
         pagoRepository.save(pago);
+
+        return pago;
 
     }
 
